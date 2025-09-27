@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Single Tab",
+  "version": "1.0",
+  "description": "This extension enforces a single tab policy in Chrome.",
+  "permissions": ["tabs", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_title": "Single Tab"
+  }
+}
